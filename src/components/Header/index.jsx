@@ -1,9 +1,16 @@
-import { Container, Profile } from "./style"
+import { Container, Profile, SignOut } from "./style"
 
 import { Input } from "../Input"
 import { Link } from "react-router-dom"
 
+import { useAuth } from "../../hooks/auth"
+import { api } from "../../services/api"
+import AvatarPlaceholder from "../../assets/avatar_placeholder.svg"
+
 export function Header() {
+  const { signOut, user } = useAuth()
+  const avatarUrl = user.avatar ? `${api.defaults.baseURL}/files/${user.avatar}` : AvatarPlaceholder
+
   return (
     <Container>
 
@@ -13,10 +20,10 @@ export function Header() {
 
       <Profile className="profile">
         <div>
-        <Link to={"/profile"}>Dyonathas Teles</Link>
-        <span>exit</span>
+        <Link to={"/profile"}>{user.name}</Link>
+        <SignOut onClick={signOut}>exit</SignOut>
         </div>
-        <Link id="img" to={"/profile"}><img src="https://github.com/DyonathasTeles.png" alt="user image" /></Link>
+        <Link id="img" to={"/profile"}><img src={avatarUrl} alt={user.name} /></Link>
       </Profile>
     </Container>
   )

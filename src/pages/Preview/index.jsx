@@ -6,9 +6,17 @@ import { FiArrowLeft } from "react-icons/fi"
 import { AiFillStar, AiOutlineStar, AiOutlineFieldTime} from "react-icons/ai"
 import { Link } from "react-router-dom";
 
+import { useAuth } from "../../hooks/auth";
+import { useState } from "react";
+import { api } from "../../services/api";
+
 
 
 export function Preview() {
+
+  const { user } = useAuth()
+  const avatarUrl = user.avatar ? `${api.defaults.baseURL}/files/${user.avatar}` : AvatarPlaceholder
+  
   return (
     <Container>
       <Header/>
@@ -28,8 +36,8 @@ export function Preview() {
           <div className="profile-date">
 
             <div className="profile">
-            <img src="https://github.com/DyonathasTeles.png" alt="user image" />
-            <p>Por Dyonathas Teles</p>
+            <img src={avatarUrl} alt={user.name} />
+            <p>{user.name}</p>
             </div>
 
             <div className="time">

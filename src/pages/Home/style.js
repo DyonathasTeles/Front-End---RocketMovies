@@ -4,6 +4,7 @@ import { Link } from "react-router-dom"
 export const Container = styled.div`
   width: 100%;
   height: 100vh;
+  
 
   display: grid;
   grid-template-rows: 116px auto;
@@ -16,12 +17,9 @@ export const Content = styled.main`
   display: flex;
   flex-direction: column;
 
-
-
   ::-webkit-scrollbar-thumb {
       background-color: ${({ theme }) => theme.COLORS.PINK};
   }
-
 
   padding: 50px 123px;
 
@@ -41,6 +39,7 @@ export const Content = styled.main`
 
   >.Notes {
     height: 800px;
+    padding-right: 10px;
     overflow-y: scroll;
 
   .Note {

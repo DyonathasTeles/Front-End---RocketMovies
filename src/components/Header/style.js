@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom"
+
 import styled from "styled-components"
 
 export const Container = styled.div`
@@ -37,12 +37,6 @@ export const Profile = styled.div`
     width: fit-content;
   }
 
-
-
-  span {
-    color: ${({ theme }) => theme.COLORS.GRAY_300};
-  }
-
 }
 
 #img{ 
@@ -54,4 +48,11 @@ export const Profile = styled.div`
 }
 
 
+`
+export const SignOut = styled.button`
+  color: ${({ theme }) => theme.COLORS.GRAY_300};
+  border: none;
+  background: transparent;
+
+  font-size: 16px;
 `

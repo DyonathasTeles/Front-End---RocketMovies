@@ -1,5 +1,4 @@
 import { useState } from "react"  
-import { useAuth } from "../../hooks/auth"
 import { api } from "../../services/api"
 
 import { Container, Background, Form } from "./style"
@@ -13,9 +12,6 @@ export function SignUp() {
   const [name, setName] = useState("")
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
-
-  const data = useAuth()
-  console.log(data);
 
   function handleCreate() {
     if (!name || !email || !password) {
