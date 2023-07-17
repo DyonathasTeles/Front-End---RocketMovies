@@ -12,8 +12,6 @@ import { useState } from "react"
 import { api } from "../../services/api"
 
 
-
-
 export function New() {
  const [newTag, setNewTag] = useState("")
  const [tags, setTags] = useState([])

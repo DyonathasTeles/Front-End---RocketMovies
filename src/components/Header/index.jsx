@@ -7,7 +7,7 @@ import { useAuth } from "../../hooks/auth"
 import { api } from "../../services/api"
 import AvatarPlaceholder from "../../assets/avatar_placeholder.svg"
 
-export function Header() {
+export function Header({...rest}) {
   const { signOut, user } = useAuth()
   const avatarUrl = user.avatar ? `${api.defaults.baseURL}/files/${user.avatar}` : AvatarPlaceholder
 
@@ -16,7 +16,7 @@ export function Header() {
 
       <h1>RocketMovies</h1>
 
-      <Input placeholder="Search by title" type="text"/>
+      <Input placeholder="Search by title" type="text" {...rest} />
 
       <Profile className="profile">
         <div>
