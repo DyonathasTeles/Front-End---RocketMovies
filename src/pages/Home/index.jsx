@@ -4,17 +4,24 @@ import { Button } from "../../components/Button"
 import { Note } from "../../components/Note"
 import { Header } from "../../components/Header"
 import { FiPlus} from "react-icons/fi"
-import { AiFillStar, AiOutlineStar} from "react-icons/ai"
+
 
 import { useEffect, useState } from "react"
 import { api } from "../../services/api"
+import { useNavigate } from "react-router-dom"
 
 
 export function Home() {
 
   const [search, setSearch] = useState("")
-  const[tag, setTag] = useState([])
+  const [tag, setTag] = useState([])
   const [notes, setNotes] = useState([])
+
+  const navigate = useNavigate()
+
+  function handleDetails(id) {
+    navigate(`/preview/${id}`)
+  }
 
   useEffect(() => {
     async function fetchNotes() {
@@ -44,64 +51,12 @@ export function Home() {
 
       
         <section className="Notes">
-          
+  
         {
           notes.map( note => (
-            <Note key={String(note.id)} data={note} />
+            <Note key={String(note.id)} data={note} onClick={() => handleDetails(note.id)} />
           ))          
         }
-
-          <div className="Note">
-
-  <h2>Interestellar</h2>
-  <div className="Stars">
-    <AiFillStar/>
-    <AiFillStar/>
-    <AiFillStar/>
-    <AiFillStar/>
-    <AiOutlineStar/>
-  </div>
-
-  <p>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-    uisquam eum incidunt nobis, aliquid facere blanditiis explicabo animi facilis! Magni voluptatem incidunt 
-    rerum adipisci autem laboriosam maiores ab quam temporibus quos
-    Lorem, ipsum dolor sit amet... 
-  </p>         
-
-  <div className="tags">
-  <Tag title={"React"}/>
-  <Tag title={"Node"}/>
-  <Tag title={"Stars"}/>
-  </div>
-
-          </div>
-
-          <div className="Note">
-
-          <h2>Interestellar</h2>
-          <div className="Stars">
-            <AiFillStar/>
-            <AiFillStar/>
-            <AiFillStar/>
-            <AiFillStar/>
-            <AiOutlineStar/>
-          </div>
-
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-            uisquam eum incidunt nobis, aliquid facere blanditiis explicabo animi facilis! Magni voluptatem incidunt 
-            rerum adipisci autem laboriosam maiores ab quam temporibus quos
-            Lorem, ipsum dolor sit amet... 
-          </p>         
-
-          <div className="tags">
-          <Tag title={"React"}/>
-          <Tag title={"Node"}/>
-          <Tag title={"Stars"}/>
-          </div>
-
-          </div>
 
         </section>
 

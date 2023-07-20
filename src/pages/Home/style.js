@@ -40,44 +40,8 @@ export const Content = styled.main`
   >.Notes {
     height: 800px;
     padding-right: 10px;
-    overflow-y: scroll;
-
-  .Note {
-    
-    padding: 32px;
-    height: 250px;
-
-    border-radius: 16px;
-    margin-bottom: 24px;
-
-    background-color: ${({ theme }) => theme.COLORS.PINK_DARK};
-    
-    h2{
-      margin-bottom: 8px;
-    } 
-
-    p {
-      margin-top: 15px;
-    }
-
-    .Stars {
-      display: flex;
-      gap: 6px;
-      svg {
-        font-size: 17px;
-        fill: ${({ theme }) => theme.COLORS.PINK};
-      }
-    }
-
-    .tags {
-      display: flex;
-
-      margin-top: 30px;
-    }
-  }
-
-  }
-
+    overflow-y: auto;
+  } 
 `
 
 export const NewNote = styled(Link)`

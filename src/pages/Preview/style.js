@@ -20,12 +20,35 @@ export const Content = styled.div`
     overflow-y: auto;
     padding: 40px 123px ;
 
-    a{
+    >.options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .return{
       color: ${({ theme }) => theme.COLORS.PINK};
       display: flex;
       align-items: center;
       gap: 8px;
+
+      background-color: transparent;
+      border: none;
     }
+
+    .remove {
+      color: ${({ theme }) => theme.COLORS.PINK};
+      display: flex;
+      align-items: center;
+      gap: 4px;
+
+      background-color: transparent;
+      border: none;
+
+      svg{
+        font-size: 20px;
+      }
+    }
+}
 
   >.title-rating {
     display: flex;
@@ -52,8 +75,8 @@ export const Content = styled.div`
 
         img {
           border-radius: 50%;
-          height: 16px;
-          width: 16px;
+          height: 25px;
+          width: 25px;
       }
 
       }
@@ -65,7 +88,7 @@ export const Content = styled.div`
 
         svg{
           color: ${({ theme }) => theme.COLORS.PINK};
-          font-size: 16px;
+          font-size: 20px;
         }
       
     }

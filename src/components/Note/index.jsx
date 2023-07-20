@@ -1,25 +1,24 @@
-import { AiFillStar, AiOutlineStar } from "react-icons/ai";
+
 import { Tag } from "../Tag";
 import { Container } from "./style";
+import { Stars } from "../Stars";
+import { Description } from "../Description";
 
 
 
 export function Note({data, ...rest}) {
+    
 
     return (
         <Container {...rest}>
 
             <h1>{data.title}</h1>
 
-            <div className="Stars">              
-            <AiFillStar/>
-            <AiFillStar/>
-            <AiFillStar/>
-            <AiFillStar/>
-            <AiOutlineStar/>
+            <div className="Stars">  
+            <Stars dataValue={data.rating} />
             </div>
 
-            <p>{data.description}</p>
+            <Description className="p" des={data.description} />
 
             {
                 data.tags && 

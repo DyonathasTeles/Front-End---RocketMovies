@@ -10,7 +10,7 @@ export default createGlobalStyle`
   body{
     background-color: ${({ theme }) => theme.COLORS.BACKGROUND_900};
     color: ${({ theme }) => theme.COLORS.WHITE};
-    font-size: 16px;
+
   }
 
   ::-webkit-scrollbar {
@@ -33,6 +33,7 @@ export default createGlobalStyle`
 
   body, input, button, label, textarea {
     font-family: 'Roboto Slab', serif;
+    font-size: 16px;
     color: ${({ theme }) => theme.COLORS.WHITE};
   }
 

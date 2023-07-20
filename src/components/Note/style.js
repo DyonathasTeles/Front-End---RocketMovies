@@ -28,12 +28,8 @@ export const Container = styled.button`
     }
     }
 
-    >p {
+    >.p {
         font-size: 16px;
-        height: 65px;
-        
-        text-overflow: ellipsis;
-        overflow: hidden;
         text-align: justify;
         margin-top: 15px;
     }
@@ -41,7 +37,6 @@ export const Container = styled.button`
     >footer {
         display: flex;
         margin-top: 30px;
-        gap: 10px;
     }
 `
 

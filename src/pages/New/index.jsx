@@ -1,5 +1,4 @@
 import { Container, Content, Section } from "./style"
-import { ButtonText } from "../../components/ButtonText"
 import { Button } from "../../components/Button"
 import { NoteItem } from "../../components/NoteItem"
 import { Textarea } from "../../components/Textarea"
@@ -7,7 +6,7 @@ import { Input } from "../../components/Input"
 import { Header } from "../../components/Header"
 import { FiArrowLeft } from "react-icons/fi"
 
-import { Link, useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 import { useState } from "react"
 import { api } from "../../services/api"
 
@@ -20,6 +19,10 @@ export function New() {
  const [rating, setRating] = useState("")
  
  const navigate = useNavigate()
+
+function handleBack() {
+  navigate(-1)
+}
  
  function handleAddTag() {
   if (!newTag) {
@@ -77,17 +80,13 @@ export function New() {
   navigate(-1)
  }
 
- function handleDeleteNote() {
-  navigate(-1)
- }
-
   return(
     <Container>
     <Header/>
 
     <Content>
       <div className="header">  
-      <Link to={"/"}> <FiArrowLeft/> Return </Link>
+      <button onClick={handleBack}> <FiArrowLeft/> Return </button>
       <h1>New movies</h1>
       </div>
 
@@ -112,7 +111,7 @@ export function New() {
       </Section>
 
       <div className="buttons">
-      <Button title={"Delete note"} isBlack={true} onClick={handleDeleteNote} />
+      <Button title={"Delete note"} isBlack={true} onClick={handleBack} />
       <Button title={"Save editions"} onClick={handleNewNote} />
       </div>
 

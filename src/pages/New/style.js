@@ -27,12 +27,15 @@ export const Content = styled.div`
       font-size: 36px;
     }
 
-    a {
+    button {
       color: ${({ theme }) => theme.COLORS.PINK};
       display: flex;
       align-items: center;
       gap: 8px;
-      
+
+      width: fit-content;
+      background-color: transparent;
+      border: none;
     }
   }
 

@@ -10,11 +10,14 @@ export const Container = styled.div`
     padding: 64px 144px;
     background: ${({ theme }) => theme.COLORS.PINK_DARK};
 
-    >a {
+    >button {
       display: flex;
       gap: 10px;
       align-items: center;
-      color: ${({ theme }) => theme.COLORS.PINK}; 
+      color: ${({ theme }) => theme.COLORS.PINK};
+      
+      background-color: transparent;
+      border: none;
     }
   }
 `
