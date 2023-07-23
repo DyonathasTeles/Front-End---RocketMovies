@@ -22,6 +22,7 @@ export const Content = styled.main`
   }
 
   padding: 50px 123px;
+  overflow-x: hidden;
 
   >.header{
     display: flex;
