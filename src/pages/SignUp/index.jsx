@@ -13,18 +13,15 @@ export function SignUp() {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
 
-  function handleCreate() {
+  async function handleCreate() {
     if (!name || !email || !password) {
      return alert("fill in all fields")
     }
 
-    api.post("/users", { name, email, password})
-
-    .then(() => {
+      api.post("/users", { name, email, password}).then(() => {
       alert("account created successfully") 
       navigate(-1)
-    })
-    .catch((error) => {
+    }).catch((error) => {
       if (error.response) {
         alert(error.response.data.message)
       } else {
@@ -48,8 +45,8 @@ export function SignUp() {
     </div>
       
       <Input placeholder="Name" type="text" icon={FiUser} onChange={e => setName(e.target.value)}/> 
-      <Input placeholder="E-mail" type="text" icon={FiLock} onChange={e => setEmail(e.target.value)}/> 
-      <Input placeholder="Password" type="Password" icon={FiMail} onChange={e => setPassword(e.target.value)}/> 
+      <Input placeholder="E-mail" type="text" icon={FiMail} onChange={e => setEmail(e.target.value)}/> 
+      <Input placeholder="Password" type="Password" icon={FiLock} onChange={e => setPassword(e.target.value)}/> 
 
     <div className="sign">
       <Button title={"Sign Up"} onClick={handleCreate}/>

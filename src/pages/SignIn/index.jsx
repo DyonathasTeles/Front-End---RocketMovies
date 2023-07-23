@@ -29,8 +29,8 @@ export function SignIn() {
       <h2>Login</h2>
     </div>
       
-      <Input placeholder="E-mail" type="text" icon={FiLock} onChange={e => setEmail(e.target.value)}/> 
-      <Input placeholder="Password" type="Password" icon={FiMail} onChange={e => setPassword(e.target.value)}/> 
+      <Input placeholder="E-mail" type="text" icon={FiMail} onChange={e => setEmail(e.target.value)}/> 
+      <Input placeholder="Password" type="Password" icon={FiLock} onChange={e => setPassword(e.target.value)}/> 
 
     <Button title={"Sign in"} onClick={handleSignIn}/>
 
